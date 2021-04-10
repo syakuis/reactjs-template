@@ -17,8 +17,8 @@
 ## 참고사항
 ### 자바스크립트와 타임스크립트 함께 지원
 
-js, jsx : 자바스크립트
-ts, tsx : 타입스크립트
+- js, jsx : 자바스크립트
+- ts, tsx : 타입스크립트
 
 ### eslint
 
@@ -31,27 +31,35 @@ ts, tsx : 타입스크립트
 
 ### NODE 설치
 
+```
 $ sudo brew install node
 
 $ sudo npm install -g n
 
 $ sudo n 14.8.0 혹은 sudo n latest
+```
 
 ### NPM 설치
 
+```
 $ sudo npm install -g npm
 
 $ npm install -g npm-check-updates
+```
 
 ### 패키지 설치
 
+```
 $ npm install
+```
 
 ### 패키지 업데이트
 
+```
 $ ncu -u
 
 $ npm install
+```
 
 ## 시작
 
