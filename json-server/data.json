@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "책읽기",
+      "complated": false
+    },
+    {
+      "id": 2,
+      "todo": "빨래하기",
+      "complated": true
+    },
+    {
+      "id": 3,
+      "todo": "청소하기",
+      "complated": false
+    }
+  ]
+}
