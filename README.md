@@ -11,7 +11,7 @@
 - typescript v4
 - jest v26
 - eslint v7
-- bootstrap v4
+- bootstrap v5
 - fortawesome v5
 
 ## 참고사항
