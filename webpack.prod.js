@@ -5,6 +5,8 @@
  */
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, args, config = {}) =>
   merge(
@@ -12,6 +14,10 @@ module.exports = (env, args, config = {}) =>
     {
       mode: 'production',
       entry: './src/index',
+      optimization: {
+        minimize: true,
+        minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+      },
     },
     config,
   );

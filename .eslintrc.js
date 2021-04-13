@@ -21,13 +21,12 @@ module.exports = {
       version: 'detect',
     },
     'import/parser': '@babel/eslint-parser',
-    'import/resolver': 'webpack',
     'import/resolver': {
-      webpack: {
-        config: './webpack.config.dev.js',
-      },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      webpack: {
+        config: './webpack.config.dev.js',
       },
     },
   },
