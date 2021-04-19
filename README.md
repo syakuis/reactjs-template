@@ -12,6 +12,7 @@
 - jest v26
 - eslint v7
 - bootstrap v5
+- react-bootstrap v5
 - fortawesome v5
 
 ## 참고사항
@@ -19,10 +20,6 @@
 
 - js, jsx : 자바스크립트
 - ts, tsx : 타입스크립트
-
-### eslint
-
-- plugin:@typescript-eslint/recommended-requiring-type-checking : off
 
 ## 설치
 
