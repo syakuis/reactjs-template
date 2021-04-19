@@ -1,11 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import {
-  HashRouter as Router,
-  Switch,
-  Redirect,
-  Route,
-  Link,
-} from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 const Todo = lazy(() => import('./todo/Todo'));
 const TodoTs = lazy(() => import('./todo.ts/Todo'));

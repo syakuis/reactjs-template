@@ -34,11 +34,8 @@ module.exports = {
     'no-console': 'off',
     'import/no-unresolved': ['error', { commonjs: true, amd: true }],
     'import/extensions': ['error', 'never', { packages: 'always' }],
-    'import/no-extraneous-dependencies': [
-      'error',
-      { devDependencies: true, peerDependencies: true },
-    ],
-    'react/prop-types': ['warn'],
+    'import/no-extraneous-dependencies': ['error'],
+    'react/prop-types': ['error'],
     'jsx-a11y/label-has-for': [
       'error',
       {
@@ -71,7 +68,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js, *.jsx'],
+      files: ['*.jsx', '*.js'],
       parser: '@babel/eslint-parser',
       extends: [
         'eslint:recommended',
@@ -93,13 +90,13 @@ module.exports = {
       ],
     },
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['*.tsx', '*.ts'],
       parser: '@typescript-eslint/parser',
       extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
-        // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jest/recommended',

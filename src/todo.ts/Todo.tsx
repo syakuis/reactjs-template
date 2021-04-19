@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { getTodos, TodoResponse } from '@/todo/services/todo';
+import {
+  getTodos,
+  TodoSpec,
+  TodoAxiosResponseSpec,
+} from '@/todo.ts/services/todo';
 
 import TodoList from './components/TodoList';
 import TodoInput from './components/TodoInput';
 
-const Todo: React.FC<void> = () => {
-  const [data, setData] = useState([]);
+const Todo: React.FC = () => {
+  const [data, setData] = useState<TodoSpec[]>([]);
 
+  const isMounted = React.useRef(true);
   useEffect(() => {
-    let mounted = true;
-
-    getTodos().then((o: TodoResponse) => {
-      if (mounted) {
-        setData(o.data);
-      }
-    });
-    return () => (mounted = false);
+    getTodos()
+      .then((o: TodoAxiosResponseSpec) => {
+        if (isMounted.current) {
+          setData(o.data);
+        }
+      })
+      .catch((e: Error) => {
+        throw e;
+      });
+    return () => {
+      isMounted.current = false;
+    };
   }, []);
 
   return (

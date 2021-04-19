@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TodoInput: React.FC<void> = () => {
+const TodoInput: React.FC = () => {
   const todo = useFormInput('');
 
   return (
@@ -22,7 +22,7 @@ const TodoInput: React.FC<void> = () => {
   );
 };
 
-const useFormInput = initialValue => {
+const useFormInput = (initialValue: string) => {
   const [value, setValue] = useState<string>(initialValue);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {

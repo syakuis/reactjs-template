@@ -3,10 +3,16 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "files.exclude": {
     "node_modules/": true
   },
-  "javascript.validate.enable": false
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

@@ -1,12 +1,8 @@
 import React from 'react';
+import { TodoSpec } from '@/todo.ts/services/todo';
 import TodoComplateInput from './TodoComplateInput';
-interface Todo {
-  id: number;
-  todo: string;
-  complated: boolean;
-}
 interface Props {
-  data: Todo[];
+  data: TodoSpec[];
 }
 
 const TodoList: React.FC<Props> = props => {
@@ -17,7 +13,7 @@ const TodoList: React.FC<Props> = props => {
       {data.map(o => (
         <li className="list-group-item" key={o.id}>
           <TodoComplateInput complated={o.complated}>
-            {o.todo}
+            {o.name}
           </TodoComplateInput>
         </li>
       ))}

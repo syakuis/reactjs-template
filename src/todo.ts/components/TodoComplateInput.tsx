@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element | string;
   complated: boolean;
 }
 
@@ -19,7 +19,7 @@ const TodoComplateInput: React.FC<Props> = props => {
   );
 };
 
-const useFormInputCheckbox = initialValue => {
+const useFormInputCheckbox = (initialValue: boolean) => {
   const [checked, setChecked] = useState<boolean>(initialValue);
 
   function handleChange() {
