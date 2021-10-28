@@ -26,7 +26,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       webpack: {
-        config: './webpack.config.dev.js',
+        config: './webpack.common.dev.js',
       },
     },
   },

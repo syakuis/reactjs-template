@@ -5,7 +5,7 @@
 import axios from 'axios';
 import Qs from 'qs';
 
-axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // axios.defaults.withCredentials = true;
 axios.defaults.paramsSerializer = params =>
   Qs.stringify(params, { arrayFormat: 'repeat' });

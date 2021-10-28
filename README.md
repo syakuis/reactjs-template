@@ -17,10 +17,15 @@
 - testing-library
   - eslint 설정에서 plugin:testing-library/recommended → plugin:testing-library/dom 변경
     - 참고 - [https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/migration-guides/v4.md](https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/migration-guides/v4.md)
+- axios
+  - axios.defaults.headers -> axios.defaults.headers.common 헤더 설정 변경
 
 ## 구성
 
 - webpack
+- reactjs
+- react-dom
+- babel
 - typescript
 - jest
 - json-server
