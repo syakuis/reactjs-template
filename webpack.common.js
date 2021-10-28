@@ -3,17 +3,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
-module.exports = (env, args = { publicPath: '' }) => {
-  const { publicPath: aPublicPath, __dirbase } = args;
-
-  const dirbase = __dirbase || __dirname;
-
-  // url 로 접근할때 경로를 의미한다.
-  // 모든 publicPath 는 통일한다.
-  const publicPath = process.env.ASSET_PATH || aPublicPath || '';
+module.exports = (env, args, options) => {
+  const { publicPath, envPath, dirbase } = options;
 
   return {
+    entry: './src/index',
     output: {
       filename: '[name].js?hash=[hash]',
       path: path.join(dirbase, 'dist'),
@@ -21,19 +18,16 @@ module.exports = (env, args = { publicPath: '' }) => {
     },
 
     plugins: [
-      // new webpack.DefinePlugin({
-      //   APP_ID: JSON.stringify(appId),
-      // }),
+      new ESLintPlugin(),
+      new Dotenv({
+        path: envPath,
+      }),
       new FileManagerPlugin({
         events: {
           onStart: {
             delete: [path.join(dirbase, 'dist')],
             mkdir: [path.join(dirbase, 'dist')],
             copy: [
-              {
-                source: path.join(dirbase, 'src/site.webmanifest'),
-                destination: path.join(dirbase, 'dist/site.webmanifest'),
-              },
               {
                 source: path.join(dirbase, 'src/images'),
                 destination: path.join(dirbase, 'dist/images'),
@@ -54,12 +48,6 @@ module.exports = (env, args = { publicPath: '' }) => {
 
     module: {
       rules: [
-        {
-          test: /\.(js|ts)x?$/,
-          enforce: 'pre',
-          loader: 'eslint-loader',
-          include: path.join(dirbase, 'src'),
-        },
         {
           test: /\.(js|ts)x?$/,
           include: path.join(dirbase, 'src'),

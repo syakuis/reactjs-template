@@ -75,7 +75,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jest/recommended',
-        'plugin:testing-library/recommended',
+        'plugin:testing-library/dom',
         'plugin:prettier/recommended',
       ],
       plugins: [
@@ -100,7 +100,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:jest/recommended',
-        'plugin:testing-library/recommended',
+        'plugin:testing-library/dom',
         'plugin:prettier/recommended',
       ],
       plugins: [
